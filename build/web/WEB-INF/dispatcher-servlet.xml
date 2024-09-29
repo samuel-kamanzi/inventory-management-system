@@ -1,0 +1,164 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+    <!-- URL Mapping -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">indexController</prop>
+                <prop key="login.htm">loginController</prop>
+                <prop key="logout.htm">logoutController</prop>
+                <prop key="stockTracking.htm">stockTrackingController</prop>
+                <prop key="homeController.htm">homeController</prop>
+                <prop key="stockmanagementController.htm">stockManagement</prop>
+               
+                <prop key="productList.htm">Listproduct</prop>
+                 <prop key="addProduct.htm">addProduct</prop>
+                   <prop key="addproductController.htm">addproductController</prop>
+                   <prop key="editProduct.htm">editProduct</prop>
+                     <prop key="stockinProduct.htm">stockinProduct</prop>
+                       <prop key="stockoutProduct.htm">stockoutProduct</prop>
+                       <prop key="report.htm">report</prop>
+                         <prop key="stockin.htm">stockinController</prop>
+                          <prop key="stockout.htm">stockoutController</prop>
+                            <prop key="stockinList.htm">stockinList</prop>
+                            
+                             <prop key="Liststockin.htm">Liststockin</prop>
+                              <prop key="stockoutList.htm">stockoutList</prop>
+                               <prop key="Liststockout.htm">Liststockout</prop>
+                               
+                                <prop key="stockList.htm">stockList</prop>
+                                   <prop key="report2.htm">report2</prop>
+                                   <prop key="Rp1.htm">Rp1</prop>
+                                    <prop key="Rp2.htm">Rp2</prop>
+                                     <prop key="Rp3.htm">Rp3</prop>
+                                      <prop key="logout1.htm">logout1</prop>                                
+                     
+                 
+                 
+                 
+               
+            </props>
+        </property>
+    </bean>
+
+    <!-- View Resolver -->
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <!-- Controllers -->
+    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="index" />
+
+    <bean name="stockTrackingController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="stockTracking" />
+    
+    <bean name="homeController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="Home" />
+    
+    <bean name="stockManagement"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="StockManagement" />
+    
+   
+         
+    <bean name="productList"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="productList" />
+    
+     <bean name="addProduct"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="addProduct" />
+     
+      <bean name="editProduct"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="editProduct" />
+     
+     
+       <bean name="stockinProduct"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="stockinProduct" />
+       
+       
+       <bean name="stockoutProduct"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="stockoutProduct" />
+       
+       
+       
+         <bean name="report"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="report" />
+        
+         <bean name="stockinList"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="stockinList" />
+         
+          <bean name="stockoutList"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="stockoutList" />
+       
+            <bean name="stockList"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="stockList" />
+
+            
+             <bean name="report2"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="report2" />
+
+                <bean name="Rp1"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="Rp1" />
+          
+                      <bean name="Rp2"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="Rp2" />
+                            <bean name="Rp3"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="Rp3" />
+
+             
+     
+     
+     
+   
+    <bean name="loginController"
+          class="Controller.Controlador" />
+
+    <bean name="logoutController"
+          class="Controller.LogoutController" />
+    
+    <bean name="Listproduct"
+          class="Controller.Listproduct" /> 
+    
+    <bean name="addproductController"
+          class="add_controller.addproductController" /> 
+
+      <bean name="stockinController"
+          class="Controller.stockinAdd" /> 
+      
+       <bean name="stockoutController"
+          class="Controller.stockout" /> 
+     
+           
+    <bean name="Liststockin"
+          class="Controller.Liststockin" /> 
+     <bean name="Liststockout"
+          class="Controller.Liststockout" /> 
+          <bean name="logout1"
+          class="Controller.logout" /> 
+
+         
+</beans>
